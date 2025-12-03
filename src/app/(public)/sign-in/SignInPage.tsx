@@ -23,15 +23,15 @@ function SignInPage() {
             Sign in
           </Typography>
 
-          {/* <div className="mt-2 flex items-baseline font-medium">
-						<Typography>Don't have an account?</Typography>
-						<Link
-							className="ml-4"
-							to="/sign-up"
-						>
-							Sign up
-						</Link>
-					</div> */}
+          <div className="mt-2 flex items-baseline font-medium">
+            <Typography>Don't have an account?</Typography>
+            <Link
+              className="ml-4"
+              to="/sign-up"
+            >
+              Sign up
+            </Link>
+          </div>
 
           <AuthJsForm formType='signin' />
 

@@ -25,6 +25,14 @@ const nextConfig = {
 
     return config
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/proxy/:path*',
+        destination: `${process.env.BACKEND_API_URL || 'http://168.119.228.109'}/:path*`,
+      },
+    ]
+  },
 }
 
 export default nextConfig
