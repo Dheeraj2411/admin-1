@@ -22,7 +22,7 @@ function UsersTable() {
     setIsLoading(true)
     try {
       const response = await tokenService.makeAuthenticatedRequest(
-        `${process.env.NEXT_PUBLIC_API_URL}/user/all-users`,
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/users?limit=1000`,
         {
           method: 'GET',
           headers: {

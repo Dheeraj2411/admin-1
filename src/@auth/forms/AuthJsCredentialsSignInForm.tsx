@@ -61,13 +61,13 @@ function AuthJsCredentialsSignInForm() {
     const { identifier, password } = formData
 
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/auth/login`,
+      `${process.env.NEXT_PUBLIC_API_URL}/admin/sign-in`,
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ identifier, password }),
+        body: JSON.stringify({ email: identifier, password }),
       }
     )
 
@@ -95,6 +95,9 @@ function AuthJsCredentialsSignInForm() {
     }
     if (refreshToken) {
       localStorage.setItem('refreshToken', refreshToken)
+    }
+    if (data?.data?.user) {
+      localStorage.setItem('user', JSON.stringify(data.data.user))
     }
 
     // Redirect to dashboard for verified users
